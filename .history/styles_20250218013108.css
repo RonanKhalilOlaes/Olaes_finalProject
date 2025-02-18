@@ -1,0 +1,150 @@
+/* styles.css */
+body {
+    background-color: #f3f4f6;
+    font-family: 'Bahnschrift', sans-serif;
+}
+
+/* gradient bg animation */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+/* animation component */
+background: linear-gradient(45deg, 
+#151a1f, #4a69bd, /* Early morning */
+#ff9a76, #ff6f61, /* Sunrise */
+#87ceeb, #fdfd96, /* Noon */
+#ffa500, #ffd700, /* Afternoon */
+#ff4500, #800080, /* Sunset */
+#000428, #1b2735 /* Evening/Night */
+);
+background-size: 600% 600%;
+animation: GradientBackground 120s ease infinite;      
+animation: GradientBackground 500s ease infinite, GradientAngle 560s linear infinite;
+overflow: hidden;
+position: relative;
+}
+
+.container:after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: radial-gradient(#ffffff88 .5px, transparent .5px);
+background-size: 3px 3px;
+opacity: 0.6;
+animation: Twinkle 2s infinite ease-in-out alternate;
+pointer-events: none;
+}
+
+.stars {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.stars::before, .stars::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('https://i.imgur.com/7IPgKbF.png'); /* A transparent star texture */
+  animation: twinkle 3s infinite alternate ease-in-out;
+}
+
+.stars::after {
+  animation-delay: 1.5s;
+  opacity: 0.8;
+}
+
+@keyframes twinkle {
+  0% {
+      opacity: 0.3;
+      transform: scale(1);
+  }
+  50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+  }
+  100% {
+      opacity: 0.3;
+      transform: scale(1);
+  }
+}
+
+
+nav {
+    
+    padding: 1rem;
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #4b5563;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 32rem;
+    border-radius: 1rem;
+}
+
+.card h1 {
+    font-size: 100px;
+    font-weight: bold;
+    color: #111827;
+}
+
+.card p {
+    color: #6b7280;
+    margin-top: 1rem;
+}
+
+.card button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.card button:hover {
+    background-color: #1e40af;
+}
