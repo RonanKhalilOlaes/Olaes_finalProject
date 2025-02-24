@@ -1,4 +1,9 @@
 /* styles.css */
+html{
+  scrollbar-color: grey transparent;
+  scrollbar-width: thin;
+}
+
 body {
   /* display: flex; */
   flex-direction: column;
@@ -75,13 +80,13 @@ nav ul {
 }
 
 nav a {
-  color: #4b5563;
+  color: #000000;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #5d5d5d;
+  color: #7e7e7e;
 }
 
 .container {
@@ -106,6 +111,8 @@ nav a:hover {
   margin-right: auto;
 
   gap: 1em;
+
+  clip-path: polygon(10% 0, 84% 12%, 100% 100%, 25% 93%, 0 60%);
 }
 
 .card {
@@ -148,7 +155,7 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
-    minmax(300px, 1fr)
+    minmax(290px, 1fr)
   ); /* Auto adjusts to the screen */
   gap: 20px;
   padding: 20px;
